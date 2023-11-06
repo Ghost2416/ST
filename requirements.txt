@@ -4,6 +4,5 @@ numpy
 matplotlib
 seaborn
 streamlit_folium
-json
 folium
 PIL
