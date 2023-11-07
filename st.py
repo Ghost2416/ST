@@ -12,7 +12,7 @@ from folium import plugins
 from PIL import Image
 
 #J'importe le DataFrame final après traitement sur Jupyter Notebook
-df=pd.read_csv("C:\\Users\\Triss\\Documents\\World_Happiness_Project\\df_final.csv")
+df=pd.read_csv("df_final.csv")
 
 #Je nomme mes pages et mon sommaire
 st.title("Projet d'Analyse du bonheur dans le monde")
@@ -72,7 +72,7 @@ if page == pages[1] :
 #Map 1 avec dégradé de couleur vert pour le Ladder Score
   st.subheader("Cartes interactives et matrice de corrélation")
   m = folium.Map(location=[0, 0], zoom_start=2)
-  with open("C:\\Users\\Triss\\Documents\\World_Happiness_Project\\Base de données\\countries.geojson") as f:
+  with open("countries.geojson") as f:
       world_geo = json.load(f)
   folium.Choropleth(
       geo_data=world_geo,
@@ -138,7 +138,7 @@ Generosity a des corrélations faibles ou négligeables avec toutes les autres v
 #Une map avec plusieurs couches pour les 3 variables les plus corrélées
 #Map 2 avec dégradé de couleur et 3 calques
   m = folium.Map(location=[0, 0], zoom_start=2)
-  with open("C:\\Users\\Triss\\Documents\\World_Happiness_Project\\Base de données\\countries.geojson") as f:
+  with open("countries.geojson") as f:
       world_geo = json.load(f)
   def add_layer(col, name, color):
       choropleth = folium.Choropleth(
@@ -169,7 +169,7 @@ Generosity a des corrélations faibles ou négligeables avec toutes les autres v
 #Une map avec plusieurs couches pour les 3 variables les moins corrélées
 #Map 3 avec dégradé de couleur et 3 calques
   m = folium.Map(location=[0, 0], zoom_start=2)
-  with open("C:\\Users\\Triss\\Documents\\World_Happiness_Project\\Base de données\\countries.geojson") as f:
+  with open("countries.geojson") as f:
       world_geo = json.load(f)
   def add_layer(col, name, color):
       choropleth = folium.Choropleth(
@@ -275,7 +275,7 @@ Generosity a des corrélations faibles ou négligeables avec toutes les autres v
 if page == pages[2]:
   st.write("### Rapport final")
 
-  image = Image.open("C:\\Users\\Triss\\Documents\\World_Happiness_Project\\happiness.jpg")
+  image = Image.open("happiness.jpg")
   st.image(image, use_column_width=True)
   st.subheader("Rapport: Facteurs Contribuant au Bien-être National et Propositions pour Améliorer le Ladder Score")
 
